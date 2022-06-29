@@ -16,7 +16,7 @@ body {
       rgb(41, 151, 254, 0.6),
       rgb(83, 71, 250, 0.6)
     ),
-    url(./assets/bg.jpg);
+    url(./assets/bg.webp);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
