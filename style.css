@@ -37,6 +37,8 @@ body {
   max-width: 100%;
   width: 80rem;
   padding: 5rem 2rem;
+
+  /* display: inline-block; */
 }
 
 h3 {
@@ -54,18 +56,26 @@ h3 {
   color: #fff;
 }
 
+.joke--animation {
+  /* animation: an 1s ease-out 1 both; */
+  animation: an 1s ease-out 1, glow 2500ms linear infinite;
+}
+
 .buttons {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .btn {
-  background-color: #437dfa;
+  background-color: #5b8efc;
   border: none;
   border-radius: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
-  padding: 1.4rem 4rem;
+  padding: min(5vw, 1.4rem) min(5vw, 4rem);
+  text-align: justify;
   font-size: 1.6rem;
   cursor: pointer;
   transition: 300ms;
@@ -77,11 +87,29 @@ h3 {
 }
 
 .btn:active {
-  transform: translateY(0.3rem);
+  transform: scale(0.98);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
 .btn i {
   margin-left: 1rem;
   color: #3d2dca;
+}
+
+@keyframes an {
+  from {
+    opacity: 0;
+    transform: perspective(500px) translate3d(-35px, -40px, -150px)
+      rotate3d(1, -1, 0, 35deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(500px) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes glow {
+  40% {
+    text-shadow: 0 0 8px #fff;
+  }
 }
